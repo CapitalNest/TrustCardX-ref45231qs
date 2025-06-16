@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Screenshot Not Allowed</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: radial-gradient(circle at top left, #0f172a, #1e293b);
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+    }
+    .glow {
+      text-shadow: 0 0 8px #0ea5e9, 0 0 15px #38bdf8;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 1.5rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    }
+  </style>aa
+</head>
+<body class="flex items-center justify-center min-h-screen px-4">
+
+  <div class="card max-w-md w-full p-6 text-center animate-fade-in">
+    <div class="mb-6">
+      <svg class="mx-auto h-16 w-16 text-red-500 animate-pulse" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3m0 4h.01M21 12A9 9 0 113 12a9 9 0 0118 0z" />
+      </svg>
+    </div>
+    <h1 class="text-2xl font-bold text-red-400 glow mb-4">Screenshot Blocked</h1>
+    <p class="text-sm text-gray-200 mb-6">
+      For your privacy and security, screenshots are not permitted on this page. This helps us protect sensitive and personal information from being exposed or misused.
+    </p>
+
+    <div class="bg-blue-800/30 p-4 rounded-xl mb-6">
+      <p class="text-white font-medium mb-2">Looking to share a gift card?</p>
+      <button onclick="shareQR()" class="bg-blue-500 hover:bg-blue-600 transition px-4 py-2 text-sm rounded-xl font-semibold shadow">
+        Share QR Gift Card Link Instead
+      </button>
+    </div>
+
+    <p class="text-xs text-gray-400 italic">Thank you for understanding and helping us keep your data safe.</p>
+  </div>
+
+  <script>
+    function shareQR() {
+      const qrLink = "https://yourdomain.com/giftcard-qr-link"; // Replace with your real link
+      navigator.clipboard.writeText(qrLink).then(() => {
+        alert("Gift card QR link copied to clipboard. You can now share it securely.");
+      }).catch(() => {
+        alert("Failed to copy the QR link. Please try again.");
+      });
+    }
+  </script>
+
+</body>
+</html>
