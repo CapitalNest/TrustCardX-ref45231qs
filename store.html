@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TrustCardX - Premium Giftcard Store</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #ffffff;
+      color: #111;
+    }
+
+    header {
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(to right, #f7f7f7, #ffffff);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: #222;
+    }
+
+    .usa-note {
+      font-size: 12px;
+      color: #4CAF50;
+      margin-top: 5px;
+    }
+
+    .profile {
+      text-align: right;
+    }
+
+    .profile img {
+      width: 40px;
+      border-radius: 50%;
+      margin-left: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .hero {
+      padding: 40px 20px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 32px;
+      font-weight: bold;
+    }
+
+    .hero p {
+      color: #777;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 25px;
+      padding: 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      padding: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .card img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      margin-bottom: 15px;
+    }
+
+    .card span {
+      font-weight: 600;
+      font-size: 16px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .order-btn {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .order-btn:hover {
+      background: #388e3c;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #f0f0f0;
+      padding: 10px;
+      text-align: center;
+      border-top: 1px solid #ddd;
+      border-radius: 20px 20px 0 0;
+      box-shadow: 0 -3px 10px rgba(0,0,0,0.05);
+    }
+
+    .iphone-dash {
+      width: 80px;
+      height: 5px;
+      background: #ccc;
+      border-radius: 10px;
+      margin: auto;
+    }
+
+    @media (max-width: 500px) {
+      .hero h1 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div>
+      <div class="logo">TrustCardX</div>
+      <div class="usa-note">🇺🇸 USA Trusted Store</div>
+    </div>
+    <div class="profile">
+      <div>Welcome, Wyatt James</div>
+      <img src="data:image/webp;base64,UklGRqgHAABXRUJQVlA4IJwHAABQMQCdASrZAOoAPp1MokqlpKOhp5PpuLATiWlu/HvvJ31u8j9kvlbX4OT8+HYPKRB08iBVZjT9EjOU+5/tv///dYKhspnjxjPZUxnqsQMKE58ebBZEgKYu4k4n/3Yh9xt6+xNHkV8Gd+ktdvsbJN+tW5+QU2NepT+Km0aCN++gcwM1mVrRJJ/bCTLtrxyNH9hh3LQvg82tQClyCHX0fHR27+8fbgsMegBtQ1G+/71DMk+eId8IbbuMbRo2I377VXBb44G2/RHxEf4B9/r2ILjGIyVREaPI1ddh9fMm33PZQMUAMiWPrs/OctCgK246n8D5tLZhv1D81YVVbohpwd9ccrd4W7f9lPwxCIYSrgjdj2FupfLA7bY5LfVLCG/ljZY71z1V8Ckz/cRwLNGMG4hhr4MnoBXrwK8uk836Aga2cJ/MEHRLmkyAb48rTya81NN254ehcEHtPrHusatGfErjSKLjYXMVR0YTPB3Hvyhm2ngOw2U9yU49Zusye9dAOmgdv2PGNEl5bJlM8eMZ7KmM9kAAAP749EAApTSx/wjMD1wNV9KNmqM2KEb2Z9XT9fV/fv78LJymc5vog6rZdVUwAeOHCU+8ptnDAZ2GYmQ5p6SBqrWu5Hr28fPyMfn0t/L0Xql8fPS4UZupg7HgCyPx2m/T68u2I/Q2kVdmwghhKCpavnmWjqGX5crwfDgn/1VV5cf4rVWWfygVBIhctmOPdHTIP6zC7EUtwq1dmwAISbS5JEUIH6cE2vNePysT1dhaEthEuh1DbUIa/59J9Zt7YtFF/HJLi8t29femBlF2/VaHo4QJLBKuzGS0aIvDd1qW/mmFgSeR0N29Uw1eOraRYvgkRmhqxZTF8pk4+o8qP8RlUxa1gUxtEv8T8w56/eHoourWRJzsqdCeXyRAlNjLwjJwHjDCLiF/TiA35KJnku/IU5gZPLWW6TAmEO4O2zx7M3ENE1kYpgXvy9hVg6b5GoCT6yrZ2zCVqAFz6QdNUIUQdDs1OkACZgiRpMLIKmTgc9XiME+Twz50N0ZMtzwRSNdf1U6VfnMPr+R7X5lHS3KSr8Z1I+FaE0D9S4gNQdpV2JMMZsfpffLRKBte0yyFANb2Vxjqo5o1XE6mGHh7URgc1pc0VmtjK7iMg7k35uyhDTXp51Hq40xa+6jXAW6OpXXtytF7Xf6KmIATZwBL+r5b/WUGjrsHzCjWjsaeMy3HZxFNmGoCpDX3KdoaMNSvxNGEPUn1EubdylKXVzMmJuR3MTOqlyKtWY3PPHo0yixqXB70ySXJ5dbY/DeC0UIO4caCPE/xrL6g6Xaa1lhg+ixk5g7LxQUwsNFp4HLcZ+OPfxOWMXknd2RIWDX3NcD1glbU0/FTi7OXCn7GkxpxajnVmwPNMVoaZBqeOqJCYtZdwgloN77RyCKTAwxUNLh67KyPn6LARW5DBMvA0Z66VvwjQfA+RflUqfdb3NOEthvz8DeqpyEYvIzYJZKpUdil0sXjZ52gZ6Uylt8Avinc2MiPn4n9c20NBxhEtoY6hau9YF/ylu44Twc1rJI8EHNgYnAfPhp+885mvl+VyPyvkI97Hd7sS9s18CLcS3IoKDtfKf91GgSdj+3m7Cgn7YtosMZ0ei2oGzs7DsWI0pB+S8BTGz64ijnGXccqorHlqs5AvogziFK/TeWEWnS1icA080+OPUo2RdgZGtIPA/qIfPrOaVuIVCMNUtW8ChSSZyOW0zd4aij+k8p4+8givbFAPNjMa4FdHN1EjsH3eEPf5CVBqrutxK/QWiJ0TchRh5BYyYmNBDgqvdwBWqPRsb4XVTnLAOjfzuTGP7fTt04+EGkas5f0dMsIPUTc8kjopzxKMEpN5Bv2TzsfNoZI/ooAGyoF9KoBR6LGf6rcivZnDr5n4fSgAtQH3N5FZQKSEscR6gYyNwPxYAZ3kaCNXzO45PuOAeOWvY/TyQXJHv/Fa4mJ6obWD/dQxvUPF8mmSbQxuZiMq2kdhNCsTtPnHfv/Mo8OCPygTXwcRw+A0UqHIbUF5bHUh6iy/zMY6BrHFJ15ydSyZqpzFDExvhIheyjzo4ahSWCNfz4+A8NRc9dALD9IDf3h9tj2vC6cT3enYayt4vnZoPPVVZQlr2D6LPEZPdVn1FBXaTphpjnbVuw9IXSkXEjvJC4SgcHlRCfyv/lH+zPvi2oVV52GWidKkwWuKXaw2R8jbJi956GX1HC23FrTVLg8ChASfOiNEtOaJizKBGble4ST6jYU1+zK8Oih/WWHELNJxasvzY2scspoZHQYPOKiFFORK6xaHrhkkG5lQdr41yl5XfTOa4Qye1DzgjRARwVuYOX8fR5mh4PxnA/LygzvmD0U63WDw2d3b/iGDNccw6pdkEzov5u3IJkmeGUxR6zZ2qTtKuWE3EfWU5IJgEGvXpKNcBfFspKHRiWixpAcMvH+F0Bom/20PPsMQHyM5it5whsfpJl+MdenMJRV9OqAnssX97gMOwvWb6iBnnacw++W2Sr8Z8LZqI6D8IYmPWYts24d39yqRK+T4N2HTT1mBCMeEL3LYmlGyz/aDo/0qUXL8Uq+jNjC0PcMRyBmFylpj0AAAAAA" alt="Wyatt James">
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Shop Premium Gift Cards Instantly</h1>
+    <p>Trusted digital giftcards for all your needs</p>
+  </section>
+
+  <section class="cards">
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Card">
+      <span>Apple Gift Card</span>
+      <button class="order-btn">Order</button>
+    </div>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Steam_icon_logo.svg" alt="Steam Card">
+      <span>Steam Gift Card</span>
+      <button class="order-btn">Order</button>
+    </div>
+    <div class="card">
+      <img src="https://th.bing.com/th/id/OIP.ngx8BNlkdSIscmIUXhbV6QHaEK?w=243&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Razer Gold">
+      <span>Razer Gold</span>
+      <button class="order-btn">Order</button>
+    </div>
+    <div class="card">
+      <img src="data:image/webp;base64,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" alt="PlayStation">
+      <span>PlayStation Card</span>
+      <button class="order-btn">Order</button>
+    </div>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Walmart_logo.svg" alt="Walmart">
+      <span>Walmart Gift Card</span>
+      <button class="order-btn">Order</button>
+    </div>
+  </section>
+
+  <footer>
+    <div class="iphone-dash"></div>
+  </footer>
+
+</body>
+</html>
